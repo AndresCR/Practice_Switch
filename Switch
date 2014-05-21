@@ -1,0 +1,102 @@
+public class Switch {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        boolean validar=true;
+        int valor1=0;
+        int valor2=0;
+        double resultado=3.8;
+        char continuar;
+        int opc=0;
+        
+        Scanner telclado= new Scanner(System.in);
+        Operaciones oOperaciones= new Operaciones();
+        System.out.print(resultado+"\n");
+        
+        do {            
+            System.out.println("Digite la operacion a evaluar");
+            System.out.println("digite 1 para suma");
+            System.out.println("digite 2 para resta");
+            System.out.println("digite 3 para divicion");
+            System.out.println("digite 4 para multiplicacion");
+            System.out.println("digite 5 para raiz");
+            System.out.println("digite 6 para potencia");
+            opc=telclado.nextLine().charAt(0);
+            
+            System.out.println("Digite el valor 1");
+            valor1=Integer.parseInt(telclado.nextLine());
+            System.out.println("Digite el valor 2");
+            valor2=Integer.parseInt(telclado.nextLine());
+                    
+            
+            switch(opc){
+                case 1:
+                        System.out.println("Digite el valor del primer digito");
+                        valor1=Integer.parseInt(telclado.nextLine());
+                        System.out.println("Digite el valor del sengudo digito");
+                        valor2=Integer.parseInt(telclado.nextLine());
+                        resultado=oOperaciones.Suma(valor1, valor2);
+                        System.out.println(resultado+"\n");
+                break;
+                case 2:
+                        System.out.println("Digite el valor del primer digito");
+                        valor1=Integer.parseInt(telclado.nextLine());
+                        System.out.println("Digite el valor del sengudo digito");
+                        valor2=Integer.parseInt(telclado.nextLine());
+                        resultado=oOperaciones.Resta(valor1, valor2);
+                        System.out.println(resultado);
+                break;
+                case 3:
+                        System.out.println("Digite el valor del primer digito");
+                        valor1=Integer.parseInt(telclado.nextLine());
+                        System.out.println("Digite el valor del sengudo digito");
+                        valor2=Integer.parseInt(telclado.nextLine());
+                        resultado=oOperaciones.Divicion(valor1, valor2);
+                        System.out.println(resultado);
+                break;
+                case 4:
+                        System.out.println("Digite el valor del primer digito");
+                        valor1=Integer.parseInt(telclado.nextLine());
+                        System.out.println("Digite el valor del sengudo digito");
+                        valor2=Integer.parseInt(telclado.nextLine());
+                        resultado=oOperaciones.Multiplicacion(valor1, valor2);
+                        System.out.println(resultado);
+                break;
+                case 5:
+                        System.out.println("Digite el valor del primer digito");
+                        valor1=Integer.parseInt(telclado.nextLine());
+                        System.out.println("Digite el valor del sengudo digito");
+                        valor2=Integer.parseInt(telclado.nextLine());
+                        resultado=oOperaciones.Raiz(valor1, valor2);
+                        System.out.println(resultado);
+                break;
+                case 6:
+                        System.out.println("Digite el valor del primer digito");
+                        valor1=Integer.parseInt(telclado.nextLine());
+                        System.out.println("Digite el valor del sengudo digito");
+                        valor2=Integer.parseInt(telclado.nextLine());
+                        resultado=oOperaciones.Potencia(valor1, valor2);
+                        System.out.println(resultado);
+                break;
+                default:
+                    break;
+            }
+            System.out.println("Desea con otra operacion S/N");
+            continuar=telclado.nextLine().charAt(0);
+            if ((continuar=='S')||(continuar=='s'))
+            {
+                validar=true;
+            }
+            if ((continuar=='N')||(continuar=='n'))
+            {
+                validar=false;
+            }
+
+        } while (validar);
+        System.out.println(resultado);
+        // TODO code application logic here
+    
+    }
+}
